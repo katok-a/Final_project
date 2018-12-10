@@ -1,5 +1,6 @@
 package katok.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,7 +17,7 @@ public class ComposePage extends BasePage {
     @FindBy(xpath = ".//input[@name=\"Subject\"]")
     WebElement subjectLine;
 
-    @FindBy(xpath = ".//iframe")
+    @FindBy(xpath = ".//*[@id='tinymce']")
     WebElement letterText;
 
     @FindBy(xpath = "//*[@id=\"b-toolbar__right\"]/div[4]/div/div[2]/div[1]/div/span")
@@ -33,7 +34,7 @@ public class ComposePage extends BasePage {
         subjectLine.sendKeys(subject);
     }
     public void fillMessageText(WebDriver driver, String messageText) {
-        driver.switchTo().frame(letterText);
+        driver.switchTo().frame(driver.findElement(By.xpath(".//iframe")));
         letterText.sendKeys(messageText);
         driver.switchTo().defaultContent();
    }
@@ -41,6 +42,4 @@ public class ComposePage extends BasePage {
     public void sendLetter(WebDriver driver) {
         sendLetterButton.click();
     }
-
-
 }

@@ -29,17 +29,12 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"mailbox:error\"]")
     private WebElement loginError;
 
-    @FindBy(xpath = "//*[@id=\"b-toolbar__left\"]/div/div/div[2]/div/a/span")
-    WebElement composeLetterButton;
-
     public WebElement getLoginError() {
         return loginError;
     }
 
-    public void goToComposePage(){
 
-        composeLetterButton.click();
-    }
+
     public void enterLogin(String login) {
         loginField.clear();
         loginField.sendKeys(login);
@@ -55,10 +50,11 @@ public class HomePage extends BasePage {
         domainSelect.selectByVisibleText(domainName);
     }
 
-    public void doLogin(String login, String password, String domainName){
+    public void doLogin(String login, String password, String domainName) {
         enterLogin(login);
         enterPassword(password);
         selectDomain(domainName);
+        submitButton.click();
     }
 
     public void pushSubmitButton() {

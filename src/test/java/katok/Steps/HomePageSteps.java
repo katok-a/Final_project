@@ -2,7 +2,9 @@ package katok.Steps;
 
 import cucumber.api.java.en.Given;
 import katok.Core.SQL.SqlDataMiner;
+import katok.Pages.BasePage;
 import katok.Pages.ComposePage;
+import katok.Pages.InboxPage;
 import org.openqa.selenium.support.ui.FluentWait;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,19 +16,14 @@ import org.openqa.selenium.WebDriver;
 import java.sql.SQLException;
 import java.util.function.Function;
 
-public class HomePageSteps {
-    private WebDriver driver = DriverFactory.getDriver("chrome");
-    private HomePage homePage = new HomePage(driver);
-    private ComposePage composePage = new ComposePage(driver);
-    SqlDataMiner dataMiner = SqlDataMiner.getMiner();
-    private String login = dataMiner.getFieldByColumn("login");
-    private String password = dataMiner.getFieldByColumn("password");
-    private String domainName = dataMiner.getFieldByColumn("domain");
-    private String incorrectLoginPassword = "!@#$%";
-    private String adressee = "testUser";
-    private String subject = "testSubject";
-    private String mailText = "testText";
+public class HomePageSteps extends BaseSteps {
 
+    private HomePage homePage = new HomePage(driver);
+    SqlDataMiner dataMiner = SqlDataMiner.getMiner();
+    String login = dataMiner.getFieldByColumn("login");
+    String password = dataMiner.getFieldByColumn("password");
+    String domainName = dataMiner.getFieldByColumn("domain");
+    private String incorrectLoginPassword = "!@#$%";
 
     public HomePageSteps() throws SQLException {
     }
@@ -91,27 +88,4 @@ public class HomePageSteps {
         driver.get(url);
         homePage.doLogin(login, password, domainName);
     }
-
-    @When("^I click button Написать письмо$")
-    public void goToComposePage(){
-       homePage.goToComposePage();
-    }
-
-    @When("^I enter adresse to Кому line$")
-    public void enterAdressee(String adressee){
-        composePage.fillAddressee(adressee);
-    }
-
-    @When("^I enter Subject to Тема line$")
-    public void enterSubject(String subject){
-        composePage.fillSubject(subject);
-    }
-
-    @When("^I enter message text to e-mail body field$")
-    public void fillMailText(){
-        composePage.fillMessageText(driver, mailText);
-    }
-
-
-
 }
