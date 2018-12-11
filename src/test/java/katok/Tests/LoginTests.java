@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
 @CucumberOptions(
         features = "src/test/java/katok/Features/",
         glue = "katok.Steps",
-        tags = "@MainPage_Tests"
+        tags = "@All_Tests"
 )
 
 public class LoginTests {

@@ -29,6 +29,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"mailbox:error\"]")
     private WebElement loginError;
 
+    @FindBy(xpath = "//*[@id=\"b-toolbar__left\"]/div/div/div[2]/div/a/span")
+    WebElement composeLetterButton;
+
+    public void goToComposePage(WebDriver driver) {
+        setExplicitWait(driver, 10, composeLetterButton);
+        composeLetterButton.click();
+    }
     public WebElement getLoginError() {
         return loginError;
     }

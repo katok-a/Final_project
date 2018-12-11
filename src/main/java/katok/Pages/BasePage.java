@@ -21,7 +21,7 @@ public class BasePage {
         driver.manage().timeouts().implicitlyWait(time, TimeUnit.MILLISECONDS);
     }
 
-    protected void setExplicitWait(WebDriver driver, int secondsToWait, WebElement element)
-    {(new WebDriverWait(driver, secondsToWait)).until(ExpectedConditions.elementToBeClickable(element));
+    public void setExplicitWait(WebDriver driver, int secondsToWait, WebElement element)
+    {(new WebDriverWait(driver, secondsToWait)).until(ExpectedConditions.visibilityOf(element));
     }
 }

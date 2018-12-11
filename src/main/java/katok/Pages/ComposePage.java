@@ -20,8 +20,11 @@ public class ComposePage extends BasePage {
     @FindBy(xpath = ".//*[@id='tinymce']")
     WebElement letterText;
 
-    @FindBy(xpath = "//*[@id=\"b-toolbar__right\"]/div[4]/div/div[2]/div[1]/div/span")
+    @FindBy(xpath = ".//*[@data-name=\"send\"]")
     WebElement sendLetterButton;
+
+    @FindBy(xpath = ".//div[@class='message-sent__title']")
+    WebElement confirmationMessage;
 
     @FindBy(xpath = "//*//*[@id=\"b-compose__sent\"]/div/div[1]/div/a[2]")
     WebElement goToInbox;
@@ -33,13 +36,19 @@ public class ComposePage extends BasePage {
     public void fillSubject(String subject) {
         subjectLine.sendKeys(subject);
     }
+
     public void fillMessageText(WebDriver driver, String messageText) {
         driver.switchTo().frame(driver.findElement(By.xpath(".//iframe")));
         letterText.sendKeys(messageText);
         driver.switchTo().defaultContent();
    }
 
-    public void sendLetter(WebDriver driver) {
+   public boolean confirmationMessageDisplayed(WebDriver driver){
+        setExplicitWait(driver,10, confirmationMessage);
+        return confirmationMessage.isDisplayed();
+   }
+
+    public void sendLetter() {
         sendLetterButton.click();
     }
 }

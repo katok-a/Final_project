@@ -8,7 +8,7 @@ public class DriverFactory {
     private DriverFactory() {
     };
 
-    public static WebDriver getDriver(String driverType) { //Hope its a Factory
+    public static WebDriver getDriver(String driverType) {
         if (driverType.equals("chrome")) {
             return new ChromeDriver();
         }

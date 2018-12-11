@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Emails>
+    <Email id="1">
+        <recepient>test1@test1.com</recepient>
+        <subject>Test 1 Subject</subject>
+        <text>This is the text from Test email Nr. 1</text>
+    </Email>
+    <Email id="2">
+        <recepient>test2@test2.com</recepient>
+        <subject>Test 2 Subject</subject>
+        <text>This is the text from Test email Nr. 2</text>
+    </Email>
+    <Email id="3">
+        <recepient>test3@test3.com</recepient>
+        <subject>Test 3 Subject</subject>
+        <text>This is the text from Test email Nr. 3</text>
+    </Email>
+    <Email id="43521608"> <!-- This is VK ID of the Recepient -->
+        <recepient>megaslacker@tut.by</recepient>
+        <subject>Message from Final Project</subject>
+        <text>This message has been sent by Katok Artem's QA Automation final project.</text>
+    </Email>
+</Emails>

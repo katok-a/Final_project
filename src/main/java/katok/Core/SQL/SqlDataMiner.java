@@ -9,7 +9,7 @@ public class SqlDataMiner {
     }
     private static SqlDataMiner dataMiner;
 
-    public static SqlDataMiner getMiner() throws SQLException { // SingleTone
+    public static SqlDataMiner getMiner() throws SQLException {
         if(dataMiner==null){
             dataMiner = new SqlDataMiner();
         }
@@ -27,8 +27,9 @@ public class SqlDataMiner {
 
     private ResultSet credentialsSet = getDataByQuery();
 
-    public String getFieldByColumn(String columnName) throws SQLException { //only 1 public method with complex inner realization
-        credentialsSet.first();                                             // guess its a Facade
+    public String getFieldByColumn(String columnName) throws SQLException {
+        System.out.println();
+        credentialsSet.first();
         return credentialsSet.getString(columnName);
     }
 }
