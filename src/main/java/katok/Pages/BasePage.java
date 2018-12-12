@@ -19,7 +19,12 @@ public abstract class BasePage {
     private static final String SCREENSHOTS_PATH = "./target/ScreenShots/";
     private static int secondsToWait = 5;
 
-   protected void setImplicitlyWait(WebDriver driver, long time) {
+    public BasePage(WebDriver driver) {
+    }
+    public BasePage() {
+    }
+
+    protected void setImplicitlyWait(WebDriver driver, long time) {
         driver.manage().timeouts().implicitlyWait(time, TimeUnit.MILLISECONDS);
     }
 
