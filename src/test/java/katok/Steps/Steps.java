@@ -216,6 +216,7 @@ public class Steps {
     @When("^I click выход button$")
     public void logOut(){
         inboxPage.logOut(driver);
+        driver.close();
     }
 
     @Then("^I see confirmation message$")

@@ -1,0 +1,22 @@
+2018-12-12 14:51:15 INFO  Steps:64 - https://mail.ru/opened
+2018-12-12 14:51:16 INFO  Steps:154 - Incorrect Login Entered
+2018-12-12 14:51:17 INFO  Steps:161 - Incorrect Password Entered
+2018-12-12 14:51:17 INFO  Steps:100 - Submit Button pushed
+2018-12-12 14:51:17 INFO  Steps:167 - Error message displayed
+2018-12-12 14:51:26 INFO  Steps:64 - https://mail.ru/opened
+2018-12-12 14:51:27 INFO  Steps:72 - Correct Login Entered
+2018-12-12 14:51:27 INFO  Steps:86 - Correct Password Entered
+2018-12-12 14:51:28 INFO  Steps:100 - Submit Button pushed
+2018-12-12 14:51:32 INFO  Steps:167 - Error message displayed
+2018-12-12 14:51:41 INFO  Steps:64 - https://mail.ru/opened
+2018-12-12 14:51:42 INFO  Steps:72 - Correct Login Entered
+2018-12-12 14:51:42 INFO  Steps:86 - Correct Password Entered
+2018-12-12 14:51:43 INFO  Steps:93 - Correct domain selected
+2018-12-12 14:51:43 INFO  Steps:100 - Submit Button pushed
+2018-12-12 14:51:51 INFO  Steps:115 - Inbox page displayed
+2018-12-12 14:52:00 INFO  Steps:64 - https://mail.ru/opened
+2018-12-12 14:52:01 INFO  Steps:79 - Correct in Login Capital letters Entered
+2018-12-12 14:52:01 INFO  Steps:86 - Correct Password Entered
+2018-12-12 14:52:02 INFO  Steps:93 - Correct domain selected
+2018-12-12 14:52:02 INFO  Steps:100 - Submit Button pushed
+2018-12-12 14:52:10 INFO  Steps:115 - Inbox page displayed
