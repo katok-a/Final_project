@@ -3,16 +3,15 @@ package katok.Tests;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/katok/Features/",
         glue = "katok.Steps",
-        tags = "@All_Tests"
+        tags = "@Spam_Tests"
 )
 
-public class LoginTests {
+public class SpamTest {
 }
 

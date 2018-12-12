@@ -9,9 +9,24 @@
       When I click Войти
       Then I see Error message
 
+    Scenario: Login using correct credentials but wrong domain name
+      Given I am on https://mail.ru/ page
+      When I enter correct UserName to Login field
+      When I enter correct Password to Password field
+      When I click Войти
+      Then I see Error message
+
     Scenario: Login using correct credentials
       Given I am on https://mail.ru/ page
       When I enter correct UserName to Login field
+      When I enter correct Password to Password field
+      When I choose correct domain name from dropdown
+      When I click Войти
+      Then I see Inbox page
+
+    Scenario: Test if Login field is case insensitive
+      Given I am on https://mail.ru/ page
+      When I enter correct UserName to Login field in Capital letters
       When I enter correct Password to Password field
       When I choose correct domain name from dropdown
       When I click Войти

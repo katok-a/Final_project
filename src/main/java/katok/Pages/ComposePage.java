@@ -44,7 +44,7 @@ public class ComposePage extends BasePage {
    }
 
    public boolean confirmationMessageDisplayed(WebDriver driver){
-        setExplicitWait(driver,10, confirmationMessage);
+        setExplicitWait(driver, confirmationMessage);
         return confirmationMessage.isDisplayed();
    }
 
